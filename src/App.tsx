@@ -1,25 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { lazy, Suspense } from 'react';
+import { ChakraProvider } from '@chakra-ui/react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import ClientLayout from 'layouts/client';
+import theme from './themes'; // Update the import statement
+
+const Dashboard = lazy(() => import('pages/client/Dashboard'));
+
+const Loading = () => <div>Loading...</div>;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider resetCSS theme={theme}>
+      <Suspense fallback={<Loading />}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<ClientLayout />}>
+              <Route index element={<Dashboard />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </Suspense>
+    </ChakraProvider>
   );
 }
 
