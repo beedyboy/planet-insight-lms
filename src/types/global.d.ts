@@ -15,5 +15,5 @@ interface ICourse extends Record<number, unknown> {
     liked: boolean;
 }
 interface IOngoingCourse extends ICourse {
-    percentageCompleted: string;
+    progress: number;
 }

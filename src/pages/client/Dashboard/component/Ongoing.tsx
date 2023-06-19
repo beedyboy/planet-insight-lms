@@ -1,14 +1,15 @@
-import React from 'react'
+import React from 'react';
 import CourseCard from './CourseCard';
-import { Box } from '@chakra-ui/react';
-const courses: IOngoingCourse[] = [
+import { Flex } from '@chakra-ui/react';
+
+const courses = [
   {
     id: 1,
     title: 'Full body training',
     modules: 4,
     duration: '1hr',
     liked: false,
-    percentageCompleted: '10%'
+    progress: 10
   },
   {
     id: 2,
@@ -16,25 +17,26 @@ const courses: IOngoingCourse[] = [
     modules: 4,
     duration: '1hr 30mins',
     liked: false,
-    percentageCompleted: '20%'
+    progress: 20
   },
   {
     id: 3,
-    title: 'Bicept Training',
+    title: 'Bicep Training',
     modules: 5,
     duration: '1hr 40mins',
     liked: true,
-    percentageCompleted: '35%'
+    progress: 35
   }
 ];
+
 const Ongoing = () => {
   return (
-    <Box>
-      {courses.map((course: IOngoingCourse) => (
+    <Flex overflowX="auto" gap="1rem" width={`100%`}>
+      {courses.map((course) => (
         <CourseCard key={course.id} course={course} />
       ))}
-    </Box>
+    </Flex>
   );
-}
+};
 
-export default Ongoing
+export default Ongoing;

@@ -8,7 +8,7 @@ const courses: IOngoingCourse[] = [
     modules: 4,
     duration: '1hr',
     liked: false,
-    percentageCompleted: '100%'
+    progress: 100
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ const courses: IOngoingCourse[] = [
     modules: 4,
     duration: '1hr 30mins',
     liked: false,
-    percentageCompleted: '100%'
+    progress: 100
   }
 ];
 const CompletedCourses = () => {
