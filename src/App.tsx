@@ -5,6 +5,7 @@ import ClientLayout from 'layouts/client';
 import theme from './themes'; // Update the import statement
 
 const Dashboard = lazy(() => import('pages/client/Dashboard'));
+const MyCourses = lazy(() => import('pages/client/MyCourses'));
 
 const Loading = () => <div>Loading...</div>;
 
@@ -16,6 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<ClientLayout />}>
               <Route index element={<Dashboard />} />
+              <Route path="my-courses" element={<MyCourses />} />
             </Route>
           </Routes>
         </BrowserRouter>

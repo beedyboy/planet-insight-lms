@@ -1,5 +1,7 @@
 import { Flex,Tab,TabList,TabPanel,TabPanels,Tabs,Text, VStack } from '@chakra-ui/react'
 import React from 'react'
+import Ongoing from './component/Ongoing';
+import CompletedCourses from './component/CompletedCourses';
 
 const Dashboard = () => {
   return (
@@ -17,10 +19,10 @@ const Dashboard = () => {
           </TabList>
           <TabPanels mt="4">
             <TabPanel>
-              <Text>Ongoing Courses Content</Text>
+              <Ongoing />
             </TabPanel>
             <TabPanel>
-              <Text>Complete Courses Content</Text>
+             <CompletedCourses />
             </TabPanel>
             <TabPanel>
               <Text>Wishlist Courses Content</Text>

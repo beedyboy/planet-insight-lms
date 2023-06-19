@@ -6,3 +6,14 @@ interface IClientMenuList {
     iconActive: string;
     active: boolean;
 }
+
+interface ICourse extends Record<number, unknown> {
+    id: number;
+    title: string;
+    modules: number;
+    duration: string;
+    liked: boolean;
+}
+interface IOngoingCourse extends ICourse {
+    percentageCompleted: string;
+}
