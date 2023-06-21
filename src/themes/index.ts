@@ -19,7 +19,17 @@ const customTheme = {
   },
   colors,
   fonts,
-  components,
+  components:{
+    ...components,
+    Progress:{
+      baseStyle:{
+        filledTrack: {
+          bg: "#EC5656",
+// eslint-disable-next-line no-irregular-whitespace
+        },
+      }
+    }
+  },
   config,
   styles: {
     global: {
