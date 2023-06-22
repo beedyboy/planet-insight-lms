@@ -3,8 +3,8 @@ import { customComponents as components } from './components';
 import colors from './colors';
 
 const fonts = {
-  heading: 'Rubik, sans-serif',
-  body: 'Rubik, sans-serif'
+  heading: 'Aquire, sans-serif',
+  body: 'Aquire, sans-serif'
 };
 
 export const config: ThemeConfig = {
@@ -25,8 +25,7 @@ const customTheme = {
       baseStyle:{
         filledTrack: {
           bg: "#EC5656",
-// eslint-disable-next-line no-irregular-whitespace
-        },
+},
       }
     }
   },
@@ -35,6 +34,7 @@ const customTheme = {
     global: {
       '.chakra-tabs__tab': {
         position: 'relative',
+        textTransform: 'uppercase',
         '&::after': {
           content: '""',
           position: 'absolute',

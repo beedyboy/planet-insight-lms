@@ -1,6 +1,6 @@
 import React from 'react'
 import CourseCard from './CourseCard';
-import { Box, Text } from '@chakra-ui/react';
+import { Flex, Text } from '@chakra-ui/react';
 const courses: IOngoingCourse[] = [
   {
     id: 1,
@@ -25,12 +25,12 @@ const CompletedCourses = () => {
       <Text> No completed courses yet!.</Text>
     );
   }
-    return (
-      <Box w="100%">
-        {courses.map((course: IOngoingCourse) => (
+  return (
+      <Flex overflowX="auto" gap="1rem" width={`100%`}>
+       {courses.map((course: IOngoingCourse) => (
           <CourseCard key={course.id} course={course} />
         ))}
-      </Box>
+    </Flex>
     );
 };
 
